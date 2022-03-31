@@ -1,0 +1,56 @@
+{
+    "name": "real-time-chat",
+    "version": "1.0.1",
+    "description": "Real Time Chat Application",
+    "engines": {
+        "node": "16.8.0",
+        "npm": "6.14.11"
+    },
+    "scripts": {
+        "seed:data": "npm run seed --prefix server",
+        "client:test": "npm run test --prefix client",
+        "server:test:watch": "npm run test:watch --prefix server",
+        "server:test:ci": "npm run test:ci --prefix server",
+        "test": "npm run test --prefix client && npm run server:test:ci",
+        "dev": "concurrently \"npm run dev --prefix server\" \"npm run dev --prefix client\"",
+        "build": "npm run build --prefix client",
+        "start": "npm run start --prefix server",
+        "heroku-postbuild": "npm install --prefix client && npm install --prefix server && npm run build --prefix client"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/omermazorgroup/real-time-chat.git"
+    },
+    "author": "Omer Mazor<omermazor144@gmail.com>",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/omermazorgroup/real-time-chat.git"
+    },
+    "homepage": "https://github.com/omermazorgroup/real-time-chat.git",
+    "devDependencies": {
+        "@vue/cli-plugin-babel": "^3.0.0-rc.12",
+        "@vue/cli-plugin-eslint": "^3.0.0-rc.12",
+        "@vue/cli-plugin-unit-jest": "^3.1.0",
+        "@vue/cli-service": "^3.0.0-rc.12",
+        "@vue/eslint-config-prettier": "^3.0.5",
+        "@vue/test-utils": "^1.0.0-beta.20",
+        "babel-core": "7.0.0-bridge.0",
+        "babel-jest": "^23.0.1",
+        "concurrently": "^4.1.0",
+        "sass-loader": "^7.0.1",
+        "vue-template-compiler": "^2.5.17"
+    },
+    "dependencies": {
+        "axios": "^0.18.0",
+        "lodash": "^4.17.11",
+        "moment": "^2.22.2",
+        "particles.js": "^2.0.0",
+        "sass": "^1.49.9",
+        "slugify": "^1.3.4",
+        "socket.io-client": "^2.2.0",
+        "typed.js": "^2.0.9",
+        "vue": "^2.5.17",
+        "vue-router": "^3.0.1",
+        "vuex": "^3.0.1"
+    }
+}
